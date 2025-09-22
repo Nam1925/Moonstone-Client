@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Moonstone Client",
+  "version": "1.13.1",
+  "author": "Nam1925",
+  "description": "A performance- and quality-focused client for Bloxd.io.",
+  "icons": { "128": "icon.png" },
+
+  "permissions": ["storage", "scripting"],       
+  "host_permissions": ["*://*.bloxd.io/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.bloxd.io/*"],
+      "js": ["content.js", "mods.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
